@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Administração {% endblock title %}
+
+{% block main %}
+
+    <a href="{% url 'logout' %}">Sair</a>
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+        <form action="">
+            <input type="text" name="pesquisa" id="pesquisa" >
+            <button>Pesquisar</button>
+        </form>
+    </div>
+
+    <h1>Listagem de Clientes</h1>
+    <ul>
+        {% for person in persons %}
+            <li>
+                <a href="{% url 'persons_update' person.id %}">{{ person.first_name }}</a>
+                <a href="{% url 'persons_delete' person.id %}">Apagar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'person_new' %}">Nova</a>
+{% endblock main %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
